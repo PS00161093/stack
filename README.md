@@ -1,2 +1,2 @@
-# stack
-Create your own Stack using Java
+# stacks & queues
+Create your own Stack & Queue using Java
