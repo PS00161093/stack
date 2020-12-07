@@ -26,30 +26,45 @@ public class MyStack {
 
     }
 
-    public void pop(){
+    public void pop() {
 
-        this.currentNode = this.previousNode;
-        this.previousNode = currentNode.nextNode;
+        if (length == 1) {
+            this.previousNode = null;
+            this.currentNode = null;
+        } else {
+            this.currentNode = this.previousNode;
+            this.previousNode = currentNode.nextNode;
+        }
         length--;
 
     }
-    public int peek(){
 
-        return this.currentNode != null ? this.currentNode.value : null;
+    public void peek() {
+
+        if(this.currentNode == null){
+            System.out.println("No item in Stack");
+        }else {
+            System.out.println(this.currentNode.value);
+        }
+
     }
 
     public void printValues() {
 
-        Node currentNode = this.currentNode;
-        while (currentNode.nextNode != null){
-            System.out.print(currentNode.value + ", ");
-            currentNode = currentNode.nextNode;
+        if (length == 0) {
+            System.out.println("Empty Stack");
+        } else {
+            Node currentNode = this.currentNode;
+            while (currentNode.nextNode != null) {
+                System.out.print(currentNode.value + ", ");
+                currentNode = currentNode.nextNode;
+            }
+            System.out.println(currentNode.value);
         }
-        System.out.println(currentNode.value);
 
     }
 
-    public int getLength(){
+    public int getLength() {
 
         return this.length;
     }
