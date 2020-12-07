@@ -1,5 +1,8 @@
 package src;
 
+/**
+ * This can also be implemented using dynamic Array like ArrayList.
+ */
 public class MyStack {
 
     Node currentNode;
