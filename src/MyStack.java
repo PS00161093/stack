@@ -11,7 +11,7 @@ public class MyStack {
     public MyStack(int value) {
 
         this.currentNode = new Node(value);
-        this.previousNode = null;
+        this.previousNode = this.currentNode;
         length++;
 
     }
@@ -35,7 +35,7 @@ public class MyStack {
     }
     public int peek(){
 
-        return this.currentNode.value;
+        return this.currentNode != null ? this.currentNode.value : null;
     }
 
     public void printValues() {
