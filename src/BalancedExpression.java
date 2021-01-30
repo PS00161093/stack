@@ -25,7 +25,8 @@ public class BalancedExpression {
                         stack.push(c);
                         break;
                     default:
-                        if (getOpeningBracket(c) != stack.pop()) {
+                        char c1 = stack.empty() ? '#' : stack.pop();
+                        if (getOpeningBracket(c) != c1) {
                             return false;
                         }
                         break;
