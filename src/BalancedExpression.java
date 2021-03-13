@@ -2,6 +2,8 @@ package src;
 
 import java.util.Stack;
 
+import static java.lang.Character.*;
+
 public class BalancedExpression {
 
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class BalancedExpression {
 
         Stack<Character> stack = new Stack<>();
         for (char c : expression.toCharArray()) {
-            if (!Character.isLetterOrDigit(c)) {
+            if (!isLetterOrDigit(c)) {
                 switch (c) {
                     case '(':
                     case '{':
