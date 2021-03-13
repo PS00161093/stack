@@ -2,20 +2,21 @@ package src;
 
 import java.util.Stack;
 
+import static java.lang.Character.isAlphabetic;
+import static java.lang.String.valueOf;
+
 public class PostFixInFix {
 
     public static void main(String[] args) {
+
         String input = "ab*c+";
+
         Stack<String> stack = new Stack<>();
         for (char c : input.toCharArray()) {
-            if (Character.isAlphabetic(c))
-                stack.push(String.valueOf(c));
-            else {
-                String c1 = stack.pop();
-                String c2 = stack.pop();
-                stack.push("(" + c2 + c + c1 + ")");
-            }
+            if (isAlphabetic(c)) stack.push(valueOf(c));
+            else stack.push("(" + stack.pop() + c + stack.pop() + ")");
         }
+
         System.out.println(stack.pop());
     }
 }
